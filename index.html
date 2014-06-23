@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timers | Experiment</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <!-- <script src="js/vendor/modernizr.js"></script> -->
+
+    <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css"> -->
+    <script src="js/vendor/angularjs/v1.3.0-beta.11/angular.min.js"></script>
+
+    <script src="js/shuffle.js"></script>
+    <!-- <link rel="stylesheet" href="css/timers.css"> -->
+  </head>
+  <body>
+    <div ng-app="com.app.shuffle">
+      <!-- <div class="large-3 medium-4 columns"></div> -->
+      <div class="large-12 medium-12 columns">
+        <div ng-controller="CardsCtrl">
+          <h2>Shuffle</h2>
+
+          <div class="panel clearfix">
+            <div class="large-9 columns">
+              <input type="text" ng-model="noOfPlayers" placeholder="No of players between 2 and 17">
+            </div>
+            <div class="large-3 columns">
+              <a class="button [radius round]" ng-click="shuffleAndPlay()">Play</a>
+            </div>
+          </div>
+
+          <span>{{winner || "Play the game"}}</span>
+          <ul>
+            <li ng-repeat="score in scores">
+              <!-- <span class="done">{{timer.label}}</span> -->
+              <span class="label [radius round]">Player {{$index+1}}: {{score}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <!-- <script src="js/storage.local.0.0.1.js"></script> -->
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
